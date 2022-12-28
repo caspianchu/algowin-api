@@ -10,6 +10,7 @@ import org.market.hedge.dto.trade.MHLimitOrder;
 import org.market.hedge.service.trade.MHTradeService;
 
 import java.io.IOException;
+import java.util.Collection;
 import java.util.List;
 
 public class DeribitOptionTradeService extends DeribitTradeServiceRaw implements MHTradeService {
@@ -108,8 +109,9 @@ public class DeribitOptionTradeService extends DeribitTradeServiceRaw implements
     }
 
     @Override
-    public void cancelAllByInstrument(ParsingCurrencyPair parsingCurrencyPair) throws IOException {
+    public Collection<String> cancelAllByInstrument(ParsingCurrencyPair parsingCurrencyPair) throws IOException {
         deribitAuthenticated.cancelAllByInstrument(parsingCurrencyPair.getParsing(), null, deribitAuth);
+        return null;
     }
 
 }

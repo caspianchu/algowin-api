@@ -1,18 +1,12 @@
 package org.market.hedge.service.marketdata;
 
-import org.knowm.xchange.currency.CurrencyPair;
 import org.knowm.xchange.dto.marketdata.OrderBook;
 import org.knowm.xchange.exceptions.NotYetImplementedForExchangeException;
 import org.knowm.xchange.service.marketdata.MarketDataService;
-import org.knowm.xchange.utils.StreamUtils;
-import org.market.hedge.core.Kline;
-import org.market.hedge.core.KlineInterval;
-import org.market.hedge.core.ParsingCurrencyPair;
-import org.market.hedge.core.PremiumIndex;
+import org.market.hedge.core.*;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * 市场
@@ -46,7 +40,12 @@ public interface MHMarketDataService extends MarketDataService {
         throw new NotYetImplementedForExchangeException();
     }
 
-
+    /**
+     * 獲取合約信息.
+     * */
+    default List<Symbol> getSymbols() throws IOException {
+        throw new NotYetImplementedForExchangeException();
+    }
 
 
 }

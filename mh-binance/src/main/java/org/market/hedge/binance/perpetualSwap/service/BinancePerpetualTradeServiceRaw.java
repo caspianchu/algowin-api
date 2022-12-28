@@ -19,12 +19,8 @@ import org.market.hedge.dto.trade.MHMarketOrder;
 
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
-import static org.knowm.xchange.client.ResilienceRegistries.NON_IDEMPOTENTE_CALLS_RETRY_CONFIG_NAME;
-import static org.market.hedge.binance.BinanceResilience.*;
-import java.util.*;
 
 public class BinancePerpetualTradeServiceRaw extends BinancePerpetualBaseService{
 

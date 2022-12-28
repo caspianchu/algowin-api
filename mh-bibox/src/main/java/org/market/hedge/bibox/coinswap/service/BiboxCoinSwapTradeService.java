@@ -6,6 +6,7 @@ import org.market.hedge.dto.trade.MHLimitOrder;
 import org.market.hedge.service.trade.MHTradeService;
 
 import java.io.IOException;
+import java.util.Collection;
 
 public class BiboxCoinSwapTradeService extends BiboxCoinSwapTradeServiceRaw implements MHTradeService {
     /**
@@ -23,7 +24,8 @@ public class BiboxCoinSwapTradeService extends BiboxCoinSwapTradeServiceRaw impl
     }
 
     @Override
-    public void cancelAllByInstrument(ParsingCurrencyPair parsingCurrencyPair) throws IOException {
+    public Collection<String> cancelAllByInstrument(ParsingCurrencyPair parsingCurrencyPair) throws IOException {
         cancelAllBibox(parsingCurrencyPair);
+        return null;
     }
 }

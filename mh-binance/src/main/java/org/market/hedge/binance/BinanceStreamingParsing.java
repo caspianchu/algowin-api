@@ -64,12 +64,4 @@ public class BinanceStreamingParsing extends StreamingParsing {
         return new ParsingCurrencyPair(st+"_"+strNow,currencyPair,args);
     }
 
-    public static void main(String[] args) {
-        String[] strNow1 = new SimpleDateFormat("yyyy-MM-dd").format(new Date(1618502400000L)).toString().split("-");
-        String strNow=(strNow1[0].substring(strNow1[0].length()-2,strNow1[0].length()))
-                +(Integer.parseInt(strNow1[1])>9?Integer.parseInt(strNow1[1]):("0"+Integer.parseInt(strNow1[1])))
-                +strNow1[2];
-
-        System.out.println(strNow);
-    }
 }

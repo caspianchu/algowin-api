@@ -29,7 +29,9 @@ public class HuobiTradeService extends HuobiTradeServiceRaw implements MHTradeSe
   /** Huobi trade history only goes back 48h - a new API was promised in 2019-Q1 */
   @Override
   public UserTrades getTradeHistory(TradeHistoryParams tradeHistoryParams) throws IOException {
-    if (!(tradeHistoryParams instanceof CurrencyPairParam)) throw new IllegalArgumentException();
+    if (!(tradeHistoryParams instanceof CurrencyPairParam)) {
+      throw new IllegalArgumentException();
+    }
 
     HuobiOrder[] openOrders = getHuobiTradeHistory((CurrencyPairParam) tradeHistoryParams);
     return HuobiAdapters.adaptTradeHistory(openOrders);
@@ -78,7 +80,9 @@ public class HuobiTradeService extends HuobiTradeServiceRaw implements MHTradeSe
 
   @Override
   public OpenOrders getOpenOrders(OpenOrdersParams openOrdersParams) throws IOException {
-    if (!(openOrdersParams instanceof CurrencyPairParam)) throw new IllegalArgumentException();
+    if (!(openOrdersParams instanceof CurrencyPairParam)) {
+      throw new IllegalArgumentException();
+    }
 
     HuobiOrder[] openOrders = getHuobiOpenOrders((CurrencyPairParam) openOrdersParams);
     return HuobiAdapters.adaptOpenOrders(openOrders);
@@ -95,7 +99,7 @@ public class HuobiTradeService extends HuobiTradeServiceRaw implements MHTradeSe
   }
 
   @Override
-  public void cancelAllByInstrument(ParsingCurrencyPair parsingCurrencyPair) throws IOException {
-
+  public Collection<String> cancelAllByInstrument(ParsingCurrencyPair parsingCurrencyPair) throws IOException {
+    return null;
   }
 }

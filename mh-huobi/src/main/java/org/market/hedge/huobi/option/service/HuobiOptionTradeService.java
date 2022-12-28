@@ -23,6 +23,7 @@ import org.market.hedge.service.trade.MHTradeService;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 
@@ -111,7 +112,7 @@ public class HuobiOptionTradeService extends HuobiOptionTradeServiceRaw implemen
     }
 
     @Override
-    public void cancelAllByInstrument(ParsingCurrencyPair parsingCurrencyPair) throws IOException  {
+    public Collection<String> cancelAllByInstrument(ParsingCurrencyPair parsingCurrencyPair) throws IOException  {
         HuobiOptionCancelAllResult result=huobiOption.cancelAll(
                 new HuobiOptionContractCodeRequest(parsingCurrencyPair.getCurrencyPair().base.getSymbol(),null,parsingCurrencyPair.getParsing()),
                 exchange.getExchangeSpecification().getApiKey(),
@@ -120,6 +121,7 @@ public class HuobiOptionTradeService extends HuobiOptionTradeServiceRaw implemen
                 HuobiUtils.createUTCDate(exchange.getNonceFactory()),
                 signatureCreator
         );
+        return null;
     }
 
 

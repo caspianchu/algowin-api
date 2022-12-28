@@ -1,7 +1,7 @@
 package org.market.hedge.bitget;
 
 import org.knowm.xchange.exceptions.ExchangeException;
-import org.knowm.xchange.utils.nonce.CurrentTimeNonceFactory;
+
 import org.market.hedge.BaseMHExchange;
 import org.market.hedge.MHExchange;
 import org.market.hedge.MHExchangeSpecification;
@@ -17,7 +17,7 @@ import java.io.IOException;
 public class BitgetExchange extends BaseMHExchange implements MHExchange {
 
 
-    private final SynchronizedValueFactory<Long> nonceFactory = new CurrentTimeNonceFactory();
+    private final SynchronizedValueFactory<Long> nonceFactory = null;
 
     @Override
     protected void initServices() {

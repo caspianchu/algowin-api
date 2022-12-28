@@ -15,6 +15,7 @@ import org.market.hedge.service.trade.MHTradeService;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -105,18 +106,15 @@ public class OkexTradeService extends OkexTradeServiceRaw implements MHTradeServ
     }
 
     @Override
-    public void cancelAllByInstrument(ParsingCurrencyPair parsingCurrencyPair) throws IOException {
+    public Collection<String> cancelAllByInstrument(ParsingCurrencyPair parsingCurrencyPair) throws IOException {
         List<CancelOrder> cancelOrders =new ArrayList<>();
         CancelOrder cancelOrder1 = new CancelOrder();
         cancelOrder1.setInstId(parsingCurrencyPair.getParsing());
         cancelOrders.add(cancelOrder1);
         JSONObject result = tradeAPIService.cancelMultipleOrders(cancelOrders);
+        return null;
     }
 
 
-    @Override
-    public boolean cancelOrder(CancelOrderParams orderParams) throws IOException {
-        return MHTradeService.super.cancelOrder(orderParams);
-    }
 }
 

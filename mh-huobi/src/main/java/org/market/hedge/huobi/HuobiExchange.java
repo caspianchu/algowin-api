@@ -18,7 +18,7 @@ import org.market.hedge.huobi.service.HuobiTradeService;
 import org.market.hedge.huobi.option.service.HuobiOptionAccountService;
 import org.market.hedge.huobi.option.service.HuobiOptionMarketDataService;
 import org.market.hedge.huobi.option.service.HuobiOptionTradeService;
-import org.knowm.xchange.utils.nonce.CurrentTimeNonceFactory;
+
 import org.market.hedge.huobi.coinSwap.service.HuobiSwapMarketDataService;
 import org.market.hedge.huobi.coinSwap.service.HuobiSwapTradeService;
 import org.market.hedge.huobi.usdtSwap.service.HuobiUsdtSwapMarketDataService;
@@ -29,7 +29,7 @@ import java.io.IOException;
 
 public class HuobiExchange extends BaseMHExchange implements MHExchange {
 
-  private final SynchronizedValueFactory<Long> nonceFactory = new CurrentTimeNonceFactory();
+  private final SynchronizedValueFactory<Long> nonceFactory = null;
 
   @Override
   protected void initServices() {

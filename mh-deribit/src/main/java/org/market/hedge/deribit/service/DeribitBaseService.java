@@ -41,13 +41,13 @@ public class DeribitBaseService extends BaseExchangeService<DeribitExchange>
     super(exchange);
     deribit =
         RestProxyFactory.createProxy(
-            Deribit.class, exchange.getExchangeSpecification().getSslUri(), getClientConfig());
+            Deribit.class, exchange.getExchangeSpecification().getSslUri(), null);
 
     deribitAuthenticated =
         RestProxyFactory.createProxy(
             DeribitAuthenticated.class,
             exchange.getExchangeSpecification().getSslUri(),
-            getClientConfig());
+            null);
 
     deribitAuth =
         DeribitAuth.createDeribitAuth(

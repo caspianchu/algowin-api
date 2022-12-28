@@ -7,6 +7,7 @@ import org.market.hedge.dto.trade.MHLimitOrder;
 import org.market.hedge.dto.trade.MHMarketOrder;
 
 import java.io.IOException;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -46,7 +47,7 @@ public interface MHTradeService extends TradeService {
     /**
      * 根据合约名称撤销关于此合约的所有订单
      * */
-    default void cancelAllByInstrument(ParsingCurrencyPair parsingCurrencyPair) throws IOException {
+    default Collection<String> cancelAllByInstrument(ParsingCurrencyPair parsingCurrencyPair) throws IOException {
         throw new NotYetImplementedForExchangeException();
     }
 

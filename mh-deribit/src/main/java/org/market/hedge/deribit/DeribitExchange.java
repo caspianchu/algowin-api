@@ -19,7 +19,7 @@ import org.market.hedge.deribit.service.DeribitMarketDataServiceRaw;
 import org.knowm.xchange.dto.meta.CurrencyMetaData;
 import org.knowm.xchange.dto.meta.CurrencyPairMetaData;
 import org.knowm.xchange.exceptions.ExchangeException;
-import org.knowm.xchange.utils.nonce.AtomicLongCurrentTimeIncrementalNonceFactory;
+import org.knowm.xchange.utils.nonce.AtomicLongIncrementalTime2014NonceFactory;
 import org.market.hedge.exception.NullTradingAreaException;
 import si.mazi.rescu.SynchronizedValueFactory;
 
@@ -29,7 +29,7 @@ import java.util.*;
 public class DeribitExchange extends BaseMHExchange implements MHExchange {
 
   private SynchronizedValueFactory<Long> nonceFactory =
-      new AtomicLongCurrentTimeIncrementalNonceFactory();
+      new AtomicLongIncrementalTime2014NonceFactory();
 
   @Override
   public void applySpecification(ExchangeSpecification exchangeSpecification) {

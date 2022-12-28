@@ -13,6 +13,7 @@ import org.market.hedge.service.trade.MHTradeService;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /** @author odrotleff */
@@ -53,8 +54,8 @@ public class BitgetUSwapTradeService extends BitgetUSwapTradeServiceRaw implemen
   }
 
   @Override
-  public void cancelAllByInstrument(ParsingCurrencyPair parsingCurrencyPair) throws IOException {
-
+  public Collection<String> cancelAllByInstrument(ParsingCurrencyPair parsingCurrencyPair) throws IOException {
+      return null;
   }
 
   public BitgetUsdtSwapOrderDataListReq getBitgetUsdtSwapCreateOrderRequest(MHLimitOrder LimitOrder){

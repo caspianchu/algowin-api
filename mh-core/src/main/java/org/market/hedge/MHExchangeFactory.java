@@ -105,8 +105,12 @@ public enum MHExchangeFactory {
     T exchange = createExchangeWithoutSpecification(exchangeClass);
 
     MHExchangeSpecification defaultExchangeSpecification = exchange.getDefaultExchangeSpecification(tradingArea);
-    if (apiKey != null) defaultExchangeSpecification.setApiKey(apiKey);
-    if (secretKey != null) defaultExchangeSpecification.setSecretKey(secretKey);
+    if (apiKey != null) {
+      defaultExchangeSpecification.setApiKey(apiKey);
+    }
+    if (secretKey != null) {
+      defaultExchangeSpecification.setSecretKey(secretKey);
+    }
     exchange.applySpecification(defaultExchangeSpecification);
 
     return exchange;

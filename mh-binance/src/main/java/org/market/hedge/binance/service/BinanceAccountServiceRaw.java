@@ -15,7 +15,6 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import static org.market.hedge.binance.BinanceResilience.REQUEST_WEIGHT_RATE_LIMITER;
-import static org.knowm.xchange.client.ResilienceRegistries.NON_IDEMPOTENTE_CALLS_RETRY_CONFIG_NAME;
 
 public class BinanceAccountServiceRaw extends BinanceBaseService {
 
@@ -66,7 +65,7 @@ public class BinanceAccountServiceRaw extends BinanceBaseService {
                         getTimestampFactory(),
                         apiKey,
                         signatureCreator))
-            .withRetry(retry("withdraw", NON_IDEMPOTENTE_CALLS_RETRY_CONFIG_NAME))
+            .withRetry(retry("withdraw", "NON_IDEMPOTENT_CALLS_RETRY_CONFIG_NAME"))
             .withRateLimiter(rateLimiter(REQUEST_WEIGHT_RATE_LIMITER), 5)
             .call();
     checkWapiResponse(result);
@@ -89,7 +88,7 @@ public class BinanceAccountServiceRaw extends BinanceBaseService {
                         getTimestampFactory(),
                         apiKey,
                         signatureCreator))
-            .withRetry(retry("withdraw", NON_IDEMPOTENTE_CALLS_RETRY_CONFIG_NAME))
+            .withRetry(retry("withdraw", "NON_IDEMPOTENT_CALLS_RETRY_CONFIG_NAME"))
             .withRateLimiter(rateLimiter(REQUEST_WEIGHT_RATE_LIMITER), 5)
             .call();
     checkWapiResponse(result);

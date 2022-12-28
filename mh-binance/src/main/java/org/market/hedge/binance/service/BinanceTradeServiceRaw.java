@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.market.hedge.binance.BinanceResilience.*;
-import static org.knowm.xchange.client.ResilienceRegistries.NON_IDEMPOTENTE_CALLS_RETRY_CONFIG_NAME;
+import static org.knowm.xchange.client.ResilienceRegistries.NON_IDEMPOTENT_CALLS_RETRY_CONFIG_NAME;
 
 public class BinanceTradeServiceRaw extends BinanceBaseService {
 
@@ -70,7 +70,7 @@ public class BinanceTradeServiceRaw extends BinanceBaseService {
                     getTimestampFactory(),
                     apiKey,
                     signatureCreator))
-        .withRetry(retry("newOrder", NON_IDEMPOTENTE_CALLS_RETRY_CONFIG_NAME))
+        .withRetry(retry("newOrder", NON_IDEMPOTENT_CALLS_RETRY_CONFIG_NAME))
         .withRateLimiter(rateLimiter(ORDERS_PER_SECOND_RATE_LIMITER))
         .withRateLimiter(rateLimiter(ORDERS_PER_DAY_RATE_LIMITER))
         .withRateLimiter(rateLimiter(REQUEST_WEIGHT_RATE_LIMITER))

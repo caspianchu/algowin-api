@@ -1,9 +1,10 @@
 package org.market.hedge.bibox;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.knowm.xchange.ExchangeSpecification;
-import org.knowm.xchange.utils.nonce.CurrentTimeNonceFactory;
+import org.knowm.xchange.utils.nonce.CurrentTimeIncrementalNonceFactory;
 import org.market.hedge.BaseMHExchange;
 import org.market.hedge.MHExchange;
 import org.market.hedge.MHExchangeSpecification;
@@ -23,7 +24,7 @@ import si.mazi.rescu.SynchronizedValueFactory;
 
 public class BiboxExchange extends BaseMHExchange implements MHExchange {
 
-  private SynchronizedValueFactory<Long> nonceFactory = new CurrentTimeNonceFactory();
+  private SynchronizedValueFactory<Long> nonceFactory = new CurrentTimeIncrementalNonceFactory(TimeUnit.SECONDS);
 
   @Override
   protected void initServices() {

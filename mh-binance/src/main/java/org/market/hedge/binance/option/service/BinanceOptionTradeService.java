@@ -11,6 +11,7 @@ import org.market.hedge.dto.trade.MHMarketOrder;
 import org.market.hedge.service.trade.MHTradeService;
 
 import java.io.IOException;
+import java.util.Collection;
 import java.util.List;
 
 public class BinanceOptionTradeService extends BinanceOptionTradeServiceRaw implements MHTradeService {
@@ -30,7 +31,8 @@ public class BinanceOptionTradeService extends BinanceOptionTradeServiceRaw impl
     }
 
     @Override
-    public void cancelAllByInstrument(ParsingCurrencyPair parsingCurrencyPair) throws IOException {
+    public Collection<String> cancelAllByInstrument(ParsingCurrencyPair parsingCurrencyPair) throws IOException {
         cancelAllOpenOrders(parsingCurrencyPair.getParsing());
+        return null;
     }
 }
