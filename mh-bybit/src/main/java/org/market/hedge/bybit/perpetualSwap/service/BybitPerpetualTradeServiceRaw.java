@@ -26,6 +26,8 @@ public class BybitPerpetualTradeServiceRaw extends BybitPerpetualBaseService{
                         "GoodTillCancel",
                         BybitPerpetualAdapters.getReduceOnly(limitOrder.getType()),
                         "false",
+                        // 持仓模式 0-單向持倉 1-雙向持倉Buy 2-雙向持倉Sell
+                        0,
                         BybitPerpetualAdapters.getSideString(limitOrder.getType()),
                         this.nonceFactory,
                         this.signatureCreator);

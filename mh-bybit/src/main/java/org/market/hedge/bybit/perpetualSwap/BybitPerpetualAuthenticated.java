@@ -37,6 +37,8 @@ public interface BybitPerpetualAuthenticated extends BybitPerpetual{
             // 賬戶上的余額不足，那麽該合約的其他委托將被取消或者降低委托數量。
             // 使用此選項可以確保您的止損單被用於減倉而非加倉。
             @FormParam("close_on_trigger") String closeOnTrigger,
+            //持仓模式 0-單向持倉 1-雙向持倉Buy 2-雙向持倉Sell
+            @FormParam("position_idx") Integer positionIdx,
             @FormParam("side") String var5,
             @FormParam("timestamp") SynchronizedValueFactory<Long> var7,
             @FormParam("sign") ParamsDigest var8) throws IOException, BybitException;
