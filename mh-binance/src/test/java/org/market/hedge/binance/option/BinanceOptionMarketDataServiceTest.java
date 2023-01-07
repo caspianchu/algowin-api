@@ -5,6 +5,7 @@ import org.market.hedge.MHExchange;
 import org.market.hedge.MHExchangeFactory;
 import org.market.hedge.binance.BinanceExchange;
 import org.market.hedge.binance.option.dto.marketdat.resq.OptionInfo;
+import org.market.hedge.binance.option.dto.marketdat.resq.OptionSymbols;
 import org.market.hedge.binance.option.service.BinanceOptionMarketDataService;
 import org.market.hedge.binance.perpetualSwap.BinancePerpetualMarketDataServiceTest;
 import org.market.hedge.core.TradingArea;
@@ -26,8 +27,8 @@ public class BinanceOptionMarketDataServiceTest {
         StreamingParsingCurrencyPair parsing=exchange.getStreamingParsing().parsingCurrencyPair;
         BinanceOptionMarketDataService mhMarketDataService = (BinanceOptionMarketDataService) exchange.getMarketDataService();
         try {
-            List<OptionInfo> optionInfos=mhMarketDataService.optionInfo();
-            optionInfos.forEach(e->{
+            List<OptionSymbols> optionSymbols=mhMarketDataService.optionInfo();
+            optionSymbols.forEach(e->{
                 log.info("{}",e);
             });
         } catch (IOException exception) {

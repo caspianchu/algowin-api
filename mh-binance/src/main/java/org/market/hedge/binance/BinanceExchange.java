@@ -227,7 +227,7 @@ public class BinanceExchange extends BaseMHExchange implements MHExchange {
         spec.setSslUri("https://fapi.binance.com");
         return spec;
       case Option:
-        spec.setSslUri("https://vapi.binance.com");
+        spec.setSslUri("https://eapi.binance.com");
         return spec;
       default:
         break;

@@ -6,6 +6,7 @@ import org.market.hedge.binance.dto.meta.BinanceSystemStatus;
 import org.market.hedge.binance.dto.meta.BinanceTime;
 import org.market.hedge.binance.dto.meta.exchangeinfo.BinanceExchangeInfo;
 import org.market.hedge.binance.option.dto.BinanceOptionResponse;
+import org.market.hedge.binance.option.dto.marketdat.resq.ExchangeInfo;
 import org.market.hedge.binance.option.dto.marketdat.resq.OptionInfo;
 
 import javax.ws.rs.GET;
@@ -151,8 +152,8 @@ public interface BinanceOption {
 
 
   @GET
-  @Path("/vapi/v1/optionInfo")
-  BinanceOptionResponse<List<OptionInfo>> optionInfo()
+  @Path("/eapi/v1/exchangeInfo")
+  ExchangeInfo optionInfo()
           throws IOException, BinanceException;
 
 }

@@ -33,7 +33,6 @@ public class DeribitExchange extends BaseMHExchange implements MHExchange {
 
   @Override
   public void applySpecification(ExchangeSpecification exchangeSpecification) {
-
     super.applySpecification(exchangeSpecification);
   }
 

@@ -47,8 +47,8 @@ public class BybitPerpetualTradeServiceTest {
         try {
             MHLimitOrder limitOrder=new MHLimitOrder(
                     Order.OrderType.ASK,
-                    new BigDecimal("0.01"),
-                    null,null,null,new BigDecimal("1200"),parsing.parsing(CurrencyPair.ETH_USDT));
+                    new BigDecimal("0.001"),
+                    null,null,null,new BigDecimal("16670"),parsing.parsing(CurrencyPair.BTC_USDT));
             String orderId= tradeService.placeLimitOrder(limitOrder);
             logger.info(JSON.toString(orderId));
         } catch (IOException e) {
