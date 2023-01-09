@@ -50,13 +50,13 @@ public class BinanceOptionTradeServiceRaw extends BinanceOptionBaseService {
             UrlParamsBuilder builder =UrlParamsBuilder.build()
                     .putToUrl("orders",JSON.toJSONString(strings))
                     .setMethod("POST");
-            UrlParamsBuilder builder111 =UrlParamsBuilder.build()
+            /*UrlParamsBuilder builder111 =UrlParamsBuilder.build()
                     .putToUrl("batchOrders", JSON.toJSONString(strings))
-                    .setMethod("POST");
+                    .setMethod("POST");*/
 
-            String signature=BinanceSignature.createSignature(apiKey,secretKey,builder111);
+            //String signature=BinanceSignature.createSignature(apiKey,secretKey,builder);
 
-            binance.batchOrders(JSON.toJSONString(strings),BinanceOptionApiConstants.DEFAULT_RECEIVING_WINDOW,getTimestampFactory(),apiKey,signature);
+            binance.batchOrders(JSON.toJSONString(strings),BinanceOptionApiConstants.DEFAULT_RECEIVING_WINDOW,getTimestampFactory(),apiKey,super.signatureCreator);
             return "success";
         } catch (BinanceException e) {
             throw BinanceErrorAdapter.adapt(e);

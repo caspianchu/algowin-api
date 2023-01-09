@@ -30,24 +30,24 @@ public class BinanceOptionTradeServiceTest {
     @Test
     public void placeLimitOrder() {
         MHExchange exchange= MHExchangeFactory.INSTANCE.createExchange(BinanceExchange.class
-                ,"xxxxxx"
-                ,"xxxxxx"
+                ,"mPbfgUbWt74d7LSFf1lQgDug7tHUaiqLIaOzldgbRxIwpO4M4wNorky8Li6ICYzB"
+                ,"AtZpu4ABX6fsO2udtPhDttYaw6FcYL3OiJ6s1vNEHaaZ2TO7Mqq44eo3rytZIXkH"
                 , TradingArea.Option);
         StreamingParsingCurrencyPair parsing=exchange.getStreamingParsing().parsingCurrencyPair;
         MHTradeService tradeService=  exchange.getTradeService();
         ParsingCurrencyPair pair=parsing.parsing(CurrencyPair.BTC_USDT
-                ,new Date(1623945600000L)
-                ,new BigDecimal("25000")
+                ,new Date(1673596800000L)
+                ,new BigDecimal("14000")
                 , Direction.Put);
         try {
             MHLimitOrder order1=
                     new MHLimitOrder(
                             Order.OrderType.BID,
-                            new BigDecimal("1") ,
+                            new BigDecimal("0.01") ,
                             CurrencyPair.BTC_USDT ,
                             "11223311",
                             new Date(),
-                            new BigDecimal("0.5"),
+                            new BigDecimal("100"),
                             pair);
             log.info(pair.getParsing());
             List<MHLimitOrder> limitOrders=new ArrayList<>();
@@ -61,15 +61,15 @@ public class BinanceOptionTradeServiceTest {
     @Test
     public void cancelAllByInstrument(){
         MHExchange exchange= MHExchangeFactory.INSTANCE.createExchange(BinanceExchange.class
-                ,"xxxxxx"
-                ,"xxxxxx"
+                ,"mPbfgUbWt74d7LSFf1lQgDug7tHUaiqLIaOzldgbRxIwpO4M4wNorky8Li6ICYzB"
+                ,"AtZpu4ABX6fsO2udtPhDttYaw6FcYL3OiJ6s1vNEHaaZ2TO7Mqq44eo3rytZIXkH"
                 , TradingArea.Option);
         StreamingParsingCurrencyPair parsing=exchange.getStreamingParsing().parsingCurrencyPair;
         MHTradeService tradeService=  exchange.getTradeService();
         ParsingCurrencyPair pair=parsing.parsing(CurrencyPair.BTC_USDT
-                ,new Date(1623945600000L)
-                ,new BigDecimal("25000")
-                , Direction.Put);
+                ,new Date(1673596800000L)
+                ,new BigDecimal("14000")
+                , Direction.Call);
         log.info(pair.getParsing());
         try {
             tradeService.cancelAllByInstrument(pair);

@@ -39,7 +39,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <market.hedge.http.version>1.0</market.hedge.http.version>
-        <xchange.version>5.0.1</xchange.version>
+        <xchange.version>5.0.13</xchange.version>
         <version.java>1.8</version.java>
         <version.assertj>3.16.1</version.assertj>
         <version.commons.io>2.7</version.commons.io>
@@ -178,7 +178,7 @@
         <dependency>
             <groupId>org.knowm.xchange</groupId>
             <artifactId>xchange-core</artifactId>
-            <version>5.0.13</version>
+            <version>${xchange.version}</version>
         </dependency>
 
     </dependencies>

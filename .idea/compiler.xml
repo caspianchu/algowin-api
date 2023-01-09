@@ -8,12 +8,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="58coin" />
-        <module name="mh-deribit" />
         <module name="mh-huobi" />
         <module name="mh-bitget" />
         <module name="mh-coinex" />
         <module name="mh-binance" />
-        <module name="mh-core" />
         <module name="mh-bibox" />
         <module name="mh-bybit" />
         <module name="mh-okex" />

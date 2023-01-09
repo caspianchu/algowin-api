@@ -2,7 +2,6 @@ package org.market.hedge.bybit.perpetualSwap.service;
 
 import org.knowm.xchange.bybit.service.BybitDigest;
 import org.knowm.xchange.client.ExchangeRestProxyBuilder;
-import org.knowm.xchange.client.ResilienceRegistries;
 import org.knowm.xchange.service.BaseService;
 import org.knowm.xchange.utils.nonce.CurrentTimeIncrementalNonceFactory;
 import org.market.hedge.bybit.BybitExchange;

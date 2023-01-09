@@ -60,13 +60,13 @@ public interface BinanceOptionAuthenticated extends BinanceOption {
       throws IOException, BinanceException;
 
   @POST
-  @Path("vapi/v1/batchOrders")
-  BinanceOptionResponse<List<BinanceNewOrder>> batchOrders(
-          @QueryParam("orders") String orders,
-          @QueryParam("recvWindow") Long recvWindow,
-          @QueryParam("timestamp") SynchronizedValueFactory<Long> timestamp,
+  @Path("eapi/v1/batchOrders")
+  List<BinanceNewOrder> batchOrders(
+          @FormParam("orders") String orders,
+          @FormParam("recvWindow") Long recvWindow,
+          @FormParam("timestamp") SynchronizedValueFactory<Long> timestamp,
           @HeaderParam(X_MBX_APIKEY) String apiKey,
-          @QueryParam(SIGNATURE) String signature)
+          @QueryParam(SIGNATURE) ParamsDigest signature)
           throws IOException, BinanceException;
 
   @POST
@@ -164,7 +164,7 @@ public interface BinanceOptionAuthenticated extends BinanceOption {
       throws IOException, BinanceException;
 
   @DELETE
-  @Path("vapi/v1/allOpenOrders")
+  @Path("eapi/v1/allOpenOrders")
   /**
    * Cancels all active orders on a symbol. This includes OCO orders.
    *
