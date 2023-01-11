@@ -4,6 +4,8 @@ import org.market.hedge.binance.dto.BinanceException;
 import org.market.hedge.binance.dto.account.*;
 import org.market.hedge.binance.dto.trade.*;
 import org.market.hedge.binance.option.dto.BinanceOptionResponse;
+import org.market.hedge.binance.option.dto.marketdat.resq.OptionOrderResp;
+import org.market.hedge.binance.option.dto.trade.req.BinanceOptionOrder;
 import org.market.hedge.binance.perpetualSwap.dto.trade.req.BinancePerpetualOrder;
 import si.mazi.rescu.ParamsDigest;
 import si.mazi.rescu.SynchronizedValueFactory;
@@ -61,7 +63,7 @@ public interface BinanceOptionAuthenticated extends BinanceOption {
 
   @POST
   @Path("eapi/v1/batchOrders")
-  List<BinanceNewOrder> batchOrders(
+  List<OptionOrderResp> batchOrders(
           @FormParam("orders") String orders,
           @FormParam("recvWindow") Long recvWindow,
           @FormParam("timestamp") SynchronizedValueFactory<Long> timestamp,

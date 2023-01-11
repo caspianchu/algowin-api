@@ -35,27 +35,138 @@ public class BinanceOptionTradeServiceTest {
                 , TradingArea.Option);
         StreamingParsingCurrencyPair parsing=exchange.getStreamingParsing().parsingCurrencyPair;
         MHTradeService tradeService=  exchange.getTradeService();
-        ParsingCurrencyPair pair=parsing.parsing(CurrencyPair.BTC_USDT
-                ,new Date(1673596800000L)
-                ,new BigDecimal("14000")
-                , Direction.Put);
+        List<MHLimitOrder> limitOrders=new ArrayList<>();
+        limitOrders.add(order1(parsing));
+        limitOrders.add(order2(parsing));
+        limitOrders.add(order3(parsing));
+        limitOrders.add(order4(parsing));
+        limitOrders.add(order5(parsing));
+        limitOrders.add(order6(parsing));
+        limitOrders.add(order7(parsing));
         try {
-            MHLimitOrder order1=
-                    new MHLimitOrder(
-                            Order.OrderType.BID,
-                            new BigDecimal("0.01") ,
-                            CurrencyPair.BTC_USDT ,
-                            "11223311",
-                            new Date(),
-                            new BigDecimal("100"),
-                            pair);
-            log.info(pair.getParsing());
-            List<MHLimitOrder> limitOrders=new ArrayList<>();
-            limitOrders.add(order1);
             tradeService.placeLimitOrders(limitOrders);
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static MHLimitOrder order1 (StreamingParsingCurrencyPair parsing) {
+        ParsingCurrencyPair pair=parsing.parsing(CurrencyPair.BTC_USDT
+                ,new Date(1673596800000L)
+                ,new BigDecimal("20000")
+                , Direction.Put);
+        MHLimitOrder order1=
+                new MHLimitOrder(
+                        Order.OrderType.BID,
+                        new BigDecimal("0.01") ,
+                        null,
+                        "11223311",
+                        new Date(),
+                        new BigDecimal("101.20"),
+                        pair);
+        return order1;
+    }
+
+    public static MHLimitOrder order2 (StreamingParsingCurrencyPair parsing) {
+        ParsingCurrencyPair pair=parsing.parsing(CurrencyPair.BTC_USDT
+                ,new Date(1673596800000L)
+                ,new BigDecimal("20000")
+                , Direction.Put);
+        MHLimitOrder order1=
+                new MHLimitOrder(
+                        Order.OrderType.BID,
+                        new BigDecimal("0.01") ,
+                        null,
+                        "11223311",
+                        new Date(),
+                        new BigDecimal("102.20"),
+                        pair);
+        return order1;
+    }
+
+    public static MHLimitOrder order3 (StreamingParsingCurrencyPair parsing) {
+        ParsingCurrencyPair pair=parsing.parsing(CurrencyPair.BTC_USDT
+                ,new Date(1673596800000L)
+                ,new BigDecimal("20000")
+                , Direction.Put);
+        MHLimitOrder order1=
+                new MHLimitOrder(
+                        Order.OrderType.BID,
+                        new BigDecimal("0.01") ,
+                        null,
+                        "11223311",
+                        new Date(),
+                        new BigDecimal("103.20"),
+                        pair);
+        return order1;
+    }
+
+    public static MHLimitOrder order4 (StreamingParsingCurrencyPair parsing) {
+        ParsingCurrencyPair pair=parsing.parsing(CurrencyPair.BTC_USDT
+                ,new Date(1673596800000L)
+                ,new BigDecimal("20000")
+                , Direction.Put);
+        MHLimitOrder order1=
+                new MHLimitOrder(
+                        Order.OrderType.BID,
+                        new BigDecimal("0.01") ,
+                        null,
+                        "11223311",
+                        new Date(),
+                        new BigDecimal("104.20"),
+                        pair);
+        return order1;
+    }
+
+    public static MHLimitOrder order5 (StreamingParsingCurrencyPair parsing) {
+        ParsingCurrencyPair pair=parsing.parsing(CurrencyPair.BTC_USDT
+                ,new Date(1673596800000L)
+                ,new BigDecimal("20000")
+                , Direction.Put);
+        MHLimitOrder order1=
+                new MHLimitOrder(
+                        Order.OrderType.BID,
+                        new BigDecimal("0.01") ,
+                        null,
+                        "11223311",
+                        new Date(),
+                        new BigDecimal("105.20"),
+                        pair);
+        return order1;
+    }
+
+    public static MHLimitOrder order6 (StreamingParsingCurrencyPair parsing) {
+        ParsingCurrencyPair pair=parsing.parsing(CurrencyPair.BTC_USDT
+                ,new Date(1673596800000L)
+                ,new BigDecimal("20000")
+                , Direction.Put);
+        MHLimitOrder order1=
+                new MHLimitOrder(
+                        Order.OrderType.BID,
+                        new BigDecimal("0.01") ,
+                        null,
+                        "11223311",
+                        new Date(),
+                        new BigDecimal("106.20"),
+                        pair);
+        return order1;
+    }
+
+    public static MHLimitOrder order7 (StreamingParsingCurrencyPair parsing) {
+        ParsingCurrencyPair pair=parsing.parsing(CurrencyPair.BTC_USDT
+                ,new Date(1673596800000L)
+                ,new BigDecimal("20000")
+                , Direction.Put);
+        MHLimitOrder order1=
+                new MHLimitOrder(
+                        Order.OrderType.BID,
+                        new BigDecimal("0.01") ,
+                        null,
+                        "11223311",
+                        new Date(),
+                        new BigDecimal("107.20"),
+                        pair);
+        return order1;
     }
 
     @Test

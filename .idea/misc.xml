@@ -8,8 +8,9 @@
     </option>
     <option name="ignoredFiles">
       <set>
-        <option value="$PROJECT_DIR$/mh-core/pom.xml" />
-        <option value="$PROJECT_DIR$/mh-deribit/pom.xml" />
+        <option value="$PROJECT_DIR$/mh-58coin/pom.xml" />
+        <option value="$PROJECT_DIR$/mh-bibox/pom.xml" />
+        <option value="$PROJECT_DIR$/mh-huobi/pom.xml" />
       </set>
     </option>
   </component>

@@ -18,6 +18,7 @@ import org.market.hedge.dto.trade.MHMarketOrder;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +28,6 @@ public class BinanceOptionTradeServiceRaw extends BinanceOptionBaseService {
     protected BinanceOptionTradeServiceRaw(BinanceExchange exchange, BinanceOptionAuthenticated binance, ResilienceRegistries resilienceRegistries) {
         super(exchange, binance, resilienceRegistries);
     }
-
 
     protected String placeOrdersLimit(List<MHLimitOrder> limitOrders) throws IOException {
         OrderType type=OrderType.LIMIT;
@@ -39,8 +39,8 @@ public class BinanceOptionTradeServiceRaw extends BinanceOptionBaseService {
                             .symbol(e.getParsingCurrencyPair().getParsing())
                             .type(type)
                             .clientOrderId(getClientOrderId(e))
-                            .quantity(e.getOriginalAmount())
-                            .price(e.getLimitPrice())
+                            .quantity(e.getOriginalAmount().setScale(2, RoundingMode.HALF_UP))
+                            .price(e.getLimitPrice().setScale(0, RoundingMode.HALF_UP))
                             .build();
             batchOrders.add(newOrder);
         });
@@ -48,13 +48,9 @@ public class BinanceOptionTradeServiceRaw extends BinanceOptionBaseService {
         batchOrders.toArray(strings);
         try {
             UrlParamsBuilder builder =UrlParamsBuilder.build()
-                    .putToUrl("orders",JSON.toJSONString(strings))
+                    .putToUrl("orders", JSON.toJSONString(strings))
                     .setMethod("POST");
-            /*UrlParamsBuilder builder111 =UrlParamsBuilder.build()
-                    .putToUrl("batchOrders", JSON.toJSONString(strings))
-                    .setMethod("POST");*/
-
-            //String signature=BinanceSignature.createSignature(apiKey,secretKey,builder);
+            String signature=BinanceSignature.createSignature(apiKey,secretKey,builder);
 
             binance.batchOrders(JSON.toJSONString(strings),BinanceOptionApiConstants.DEFAULT_RECEIVING_WINDOW,getTimestampFactory(),apiKey,super.signatureCreator);
             return "success";
