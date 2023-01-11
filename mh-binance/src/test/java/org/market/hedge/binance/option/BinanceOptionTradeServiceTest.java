@@ -27,11 +27,15 @@ public class BinanceOptionTradeServiceTest {
 
     Logger log= LoggerFactory.getLogger(BinancePerpetualMarketDataServiceTest.class);
 
+    private static final String apiKey="";
+
+    private static final String secretKey="";
+
     @Test
     public void placeLimitOrder() {
         MHExchange exchange= MHExchangeFactory.INSTANCE.createExchange(BinanceExchange.class
-                ,"mPbfgUbWt74d7LSFf1lQgDug7tHUaiqLIaOzldgbRxIwpO4M4wNorky8Li6ICYzB"
-                ,"AtZpu4ABX6fsO2udtPhDttYaw6FcYL3OiJ6s1vNEHaaZ2TO7Mqq44eo3rytZIXkH"
+                ,apiKey
+                ,secretKey
                 , TradingArea.Option);
         StreamingParsingCurrencyPair parsing=exchange.getStreamingParsing().parsingCurrencyPair;
         MHTradeService tradeService=  exchange.getTradeService();
@@ -172,8 +176,8 @@ public class BinanceOptionTradeServiceTest {
     @Test
     public void cancelAllByInstrument(){
         MHExchange exchange= MHExchangeFactory.INSTANCE.createExchange(BinanceExchange.class
-                ,"mPbfgUbWt74d7LSFf1lQgDug7tHUaiqLIaOzldgbRxIwpO4M4wNorky8Li6ICYzB"
-                ,"AtZpu4ABX6fsO2udtPhDttYaw6FcYL3OiJ6s1vNEHaaZ2TO7Mqq44eo3rytZIXkH"
+                ,apiKey
+                ,secretKey
                 , TradingArea.Option);
         StreamingParsingCurrencyPair parsing=exchange.getStreamingParsing().parsingCurrencyPair;
         MHTradeService tradeService=  exchange.getTradeService();
