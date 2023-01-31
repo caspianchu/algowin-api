@@ -6,6 +6,7 @@ import org.market.hedge.bybit.perpetualSwap.dto.trade.resp.BybitPerpetualPositio
 import org.market.hedge.core.BilateralPositionInfo;
 import org.market.hedge.core.ParsingCurrencyPair;
 import org.market.hedge.core.PositionInfo;
+import org.market.hedge.core.PositionMode;
 import org.market.hedge.service.account.MHAccountService;
 
 import javax.crypto.Mac;
@@ -20,6 +21,15 @@ import java.util.List;
 public class BybitPerpetualAccountService extends BybitPerpetualAccountServiceRaw implements MHAccountService {
     public BybitPerpetualAccountService(BybitExchange exchange) {
         super(exchange);
+    }
+
+    public void switchMode(ParsingCurrencyPair parsingCurrencyPair, PositionMode positionMode) throws IOException {
+        BybitResult<String> result=bybit.switchMode(this.apiKey,
+                parsingCurrencyPair.getParsing(),
+                positionMode.name(),
+                this.nonceFactory,
+                this.signatureCreator);
+        System.out.println(result);
     }
 
     @Override

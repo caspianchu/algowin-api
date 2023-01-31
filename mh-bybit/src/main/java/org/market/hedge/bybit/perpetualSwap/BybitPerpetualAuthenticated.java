@@ -51,6 +51,15 @@ public interface BybitPerpetualAuthenticated extends BybitPerpetual{
             @FormParam("timestamp") SynchronizedValueFactory<Long> var7,
             @FormParam("sign") ParamsDigest var8) throws IOException, BybitException;
 
+    @POST
+    @Path("/private/linear/position/switch-mode")
+    BybitResult<String> switchMode(
+            @FormParam("api_key") String var1,
+            @FormParam("symbol") String var2,
+            @FormParam("mode") String var3,
+            @FormParam("timestamp") SynchronizedValueFactory<Long> var7,
+            @FormParam("sign") ParamsDigest var8) throws IOException, BybitException;
+
 /*
     @GET
     @Path("/private/linear/position/list")

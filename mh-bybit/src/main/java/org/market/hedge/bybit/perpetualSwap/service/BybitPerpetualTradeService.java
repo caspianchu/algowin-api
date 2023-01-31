@@ -1,8 +1,6 @@
 package org.market.hedge.bybit.perpetualSwap.service;
 
-import org.knowm.xchange.bybit.BybitAdapters;
 import org.knowm.xchange.bybit.dto.BybitResult;
-import org.knowm.xchange.service.trade.params.CancelAllOrders;
 import org.market.hedge.bybit.BybitExchange;
 import org.market.hedge.bybit.perpetualSwap.dto.trade.req.BybitPerpetualOrderReq;
 import org.market.hedge.core.ParsingCurrencyPair;
@@ -32,4 +30,5 @@ public class BybitPerpetualTradeService extends BybitPerpetualTradeServiceRaw im
                 this.signatureCreator);
         return result.getResult();
     }
+
 }

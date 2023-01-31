@@ -35,6 +35,7 @@ public class BinanceOptionTradeServiceRaw extends BinanceOptionBaseService {
         limitOrders.forEach(e->{
             BinanceOptionOrder newOrder =
                     BinanceOptionOrder.builder()
+                            .timeInForce(byTimeInForce(e.getTimeInForce()))
                             .side(BinanceAdapters.convert(e.getType()))
                             .symbol(e.getParsingCurrencyPair().getParsing())
                             .type(type)
@@ -56,6 +57,20 @@ public class BinanceOptionTradeServiceRaw extends BinanceOptionBaseService {
             return "success";
         } catch (BinanceException e) {
             throw BinanceErrorAdapter.adapt(e);
+        }
+    }
+
+    public TimeInForce byTimeInForce(org.market.hedge.core.TimeInForce timeInForce){
+        switch (timeInForce){
+            case IOC:
+                return TimeInForce.IOC;
+            case FOK:
+                return TimeInForce.FOK;
+            case PO:
+            case GTC:
+            default:
+                return TimeInForce.GTC;
+
         }
     }
 

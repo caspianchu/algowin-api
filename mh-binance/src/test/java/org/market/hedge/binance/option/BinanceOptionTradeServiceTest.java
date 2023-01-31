@@ -9,6 +9,7 @@ import org.market.hedge.binance.BinanceExchange;
 import org.market.hedge.binance.perpetualSwap.BinancePerpetualMarketDataServiceTest;
 import org.market.hedge.core.Direction;
 import org.market.hedge.core.ParsingCurrencyPair;
+import org.market.hedge.core.TimeInForce;
 import org.market.hedge.core.TradingArea;
 import org.market.hedge.dto.trade.MHLimitOrder;
 import org.market.hedge.service.StreamingParsingCurrencyPair;
@@ -67,6 +68,7 @@ public class BinanceOptionTradeServiceTest {
                         "11223311",
                         new Date(),
                         new BigDecimal("101.20"),
+                        TimeInForce.IOC,
                         pair);
         return order1;
     }

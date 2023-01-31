@@ -19,8 +19,8 @@ public class BaseWiremockTest {
         MHExchange exchange =
                 MHExchangeFactory.INSTANCE.createExchange(BybitExchange.class,"MXOsEpAU5se3jADHpk","Z26HxejVFgmmnYb7vkXLpruqsPsosA2ZULbi", TradingArea.PerpetualSwap);
         ExchangeSpecification specification = exchange.getDefaultExchangeSpecification();
-        specification.setApiKey("MXOsEpAU5se3jADHpk");
-        specification.setSecretKey("Z26HxejVFgmmnYb7vkXLpruqsPsosA2ZULbi");
+        specification.setApiKey("9ku2v25eOJBXdQzwfT");
+        specification.setSecretKey("TXnjTNZvdX1vFdQokpPzKlu5lL2Pxn5J1JXi");
         specification.setShouldLoadRemoteMetaData(false);
         specification.setProxyHost("127.0.0.1");
         specification.setProxyPort(7890);
