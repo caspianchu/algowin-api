@@ -5,9 +5,7 @@ import org.market.hedge.binance.dto.marketdata.*;
 import org.market.hedge.binance.dto.meta.BinanceSystemStatus;
 import org.market.hedge.binance.dto.meta.BinanceTime;
 import org.market.hedge.binance.dto.meta.exchangeinfo.BinanceExchangeInfo;
-import org.market.hedge.binance.option.dto.BinanceOptionResponse;
-import org.market.hedge.binance.option.dto.marketdat.resq.ExchangeInfo;
-import org.market.hedge.binance.option.dto.marketdat.resq.OptionInfo;
+import org.market.hedge.binance.option.dto.marketdat.resp.ExchangeInfo;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

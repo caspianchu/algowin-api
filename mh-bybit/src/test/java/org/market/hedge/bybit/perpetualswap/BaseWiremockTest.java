@@ -17,10 +17,10 @@ public class BaseWiremockTest {
 
     public MHExchange createExchange() throws IOException {
         MHExchange exchange =
-                MHExchangeFactory.INSTANCE.createExchange(BybitExchange.class,"MXOsEpAU5se3jADHpk","Z26HxejVFgmmnYb7vkXLpruqsPsosA2ZULbi", TradingArea.PerpetualSwap);
+                MHExchangeFactory.INSTANCE.createExchange(BybitExchange.class,"kHroFmcgQF1tTrzxb9","N8lHoRrBa6wmj3yTV3oaqZfCAzFYKOMMA84w", TradingArea.PerpetualSwap);
         ExchangeSpecification specification = exchange.getDefaultExchangeSpecification();
-        specification.setApiKey("9ku2v25eOJBXdQzwfT");
-        specification.setSecretKey("TXnjTNZvdX1vFdQokpPzKlu5lL2Pxn5J1JXi");
+        specification.setApiKey("kHroFmcgQF1tTrzxb9");
+        specification.setSecretKey("N8lHoRrBa6wmj3yTV3oaqZfCAzFYKOMMA84w");
         specification.setShouldLoadRemoteMetaData(false);
         specification.setProxyHost("127.0.0.1");
         specification.setProxyPort(7890);

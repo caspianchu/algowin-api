@@ -4,9 +4,7 @@ import org.market.hedge.binance.dto.BinanceException;
 import org.market.hedge.binance.dto.account.*;
 import org.market.hedge.binance.dto.trade.*;
 import org.market.hedge.binance.option.dto.BinanceOptionResponse;
-import org.market.hedge.binance.option.dto.marketdat.resq.OptionOrderResp;
-import org.market.hedge.binance.option.dto.trade.req.BinanceOptionOrder;
-import org.market.hedge.binance.perpetualSwap.dto.trade.req.BinancePerpetualOrder;
+import org.market.hedge.binance.option.dto.marketdat.resp.OptionOrderResp;
 import si.mazi.rescu.ParamsDigest;
 import si.mazi.rescu.SynchronizedValueFactory;
 

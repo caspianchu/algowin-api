@@ -1,4 +1,4 @@
-package org.market.hedge.binance.option.dto.marketdat.resq;
+package org.market.hedge.binance.option.dto.marketdat.resp;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
